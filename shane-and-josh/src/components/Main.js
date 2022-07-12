@@ -6,6 +6,7 @@ import myVideo from "../videos/intro.mov";
 import TypeAnimation from "react-type-animation";
 import { ReactComponent as Sort } from "../sort.svg";
 import Typed from "react-typed";
+import { trackWindowScroll } from "react-lazy-load-image-component";
 
 import Background from "./sf2.jpg";
 
@@ -28,7 +29,7 @@ function Main() {
     } else {
       setImages(listOfImages);
     }
-  }, [sort])
+  }, [sort]);
 
   const shuffle = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
@@ -55,7 +56,7 @@ function Main() {
       </div>
  */
 
-      /**
+  /**
        *       <button className="fly-to-top" onClick={setSort}>
         <Sort />
       </button>
@@ -92,4 +93,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default trackWindowScroll(Main);
