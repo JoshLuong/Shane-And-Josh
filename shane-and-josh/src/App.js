@@ -1,9 +1,15 @@
-import Main from './components/Main';
-import './App.css';
+import Main from "./components/Main";
+import ScrollToTop from "react-scroll-to-top";
+import { ReactComponent as Arrow } from "./arrow.svg";
+
+import "./App.css";
 
 function App() {
   return (
-    <Main className="body"/>
+    <>
+      <ScrollToTop smooth  component={<Arrow />} />
+      <Main className="body"/>
+    </>
   );
 }
 
