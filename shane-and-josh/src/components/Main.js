@@ -2,7 +2,6 @@ import "../App.css";
 import React, { useEffect, useState } from "react";
 import Image from "./Image";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import myVideo from "../videos/intro.mov";
 import TypeAnimation from "react-type-animation";
 import { ReactComponent as Sort } from "../sort.svg";
 import Typed from "react-typed";
