@@ -2,7 +2,12 @@ import "../App.css";
 
 function Image(props) {
   return (
-    <img width='100%' src={props.src}></img>
+    <div style={{position: 'relative'}}>
+    <div className="hover-div">
+      {props.meta}
+    </div>
+    <img height="100%" width='100%' src={props.src}></img>
+    </div>
   );
 }
 

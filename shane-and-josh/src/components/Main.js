@@ -74,7 +74,7 @@ function Main() {
           <Typed
             strings={["San Francisco '22.", "Shane and Josh."]}
             typeSpeed={75}
-            backSpeed={80}
+            backSpeed={60}
           />
         </div>
       </div>
@@ -82,7 +82,7 @@ function Main() {
         <Masonry gutter={10}>
           {images.map((image, index) => (
             <>
-              <Image key={index} src={image} />
+              <Image key={index} src={image} meta={`${index + 1}/${listOfImages.length}`} />
             </>
           ))}
         </Masonry>

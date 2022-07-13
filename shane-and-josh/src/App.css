@@ -8,6 +8,26 @@
   margin-bottom: 10px;
 }
 
+.hover-div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: transparent;
+  font-weight: 100;
+}
+
+.hover-div:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
 .fly-to-top {
   background-color: white;
   border-radius: 7px;
@@ -48,7 +68,6 @@
   top: 45%;
   width: 100%;
   text-align: center;
-  font-family: 'DM Serif Display', serif;
   font-size: 5em;
   color: white;
 }
