@@ -6,31 +6,14 @@ import myVideo from "../videos/intro.mov";
 import TypeAnimation from "react-type-animation";
 import { ReactComponent as Sort } from "../sort.svg";
 import Typed from "react-typed";
-import { trackWindowScroll } from "react-lazy-load-image-component";
 
 import Background from "./sf2.jpg";
 
 function Main() {
   const [images, setImages] = useState([]);
-  const [sort, setSort] = useState(false);
   const importAll = (r) => {
     return r.keys().map(r);
   };
-  const listOfImages = importAll(
-    require.context("../../img", false, /\.(JPG|jpeg|png|jpg)$/)
-  );
-  useEffect(() => {
-    setImages(shuffle(listOfImages));
-  }, []);
-
-  useEffect(() => {
-    if (sort) {
-      setImages(shuffle(listOfImages));
-    } else {
-      setImages(listOfImages);
-    }
-  }, [sort]);
-
   const shuffle = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -38,6 +21,22 @@ function Main() {
     }
     return a;
   };
+  const listOfImages = shuffle(importAll(
+    require.context("../../img", false, /\.(JPG|jpeg|png|jpg)$/)
+  ));
+  useEffect(() => {
+    setImages(listOfImages.slice(0, 5));
+  }, []);
+
+  window.addEventListener('scroll', function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      let endIndex = images.length + 5;
+      if (images.length + 5 > listOfImages.length) {
+        endIndex = listOfImages.length;
+      }
+       setImages([...images, ...listOfImages.slice(images.length, endIndex)]);
+    }
+ });
 
   /**
  * 
@@ -93,4 +92,4 @@ function Main() {
   );
 }
 
-export default trackWindowScroll(Main);
+export default (Main);
