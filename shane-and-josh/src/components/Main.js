@@ -28,9 +28,9 @@ function Main() {
   }, []);
 
   window.addEventListener('scroll', function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      let endIndex = images.length + 5;
-      if (images.length + 5 > listOfImages.length) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 700) {
+      let endIndex = images.length + 10;
+      if (images.length + 10 > listOfImages.length) {
         endIndex = listOfImages.length;
       }
        setImages([...images, ...listOfImages.slice(images.length, endIndex)]);
