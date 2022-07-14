@@ -73,7 +73,7 @@ function Main() {
       <div className="title-container">
         <div className="title">
           <Fade left delay={500}>
-            <p>{listOfImages.length} pictures taken.</p>
+            <p>{listOfImages.length} moments captured.</p>
         </Fade>
         <Fade left delay={1000} duration={1000}>
             <div>San Francisco '22.</div>
