@@ -79,12 +79,22 @@
   margin: 0;
 }
 
+.meta-text {
+  opacity: 0.5;
+  font-size: 0.8em;
+  font-weight: 100;
+  letter-spacing: 0.5px;
+}
+
 @media screen and (max-width: 750px){
   .title {
     font-size: 2em;
   }
   .title div {
     font-size: 2em;
+  }
+  .meta-text {
+    font-size: 0.5em;
   }
 }
 
