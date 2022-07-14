@@ -5,6 +5,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import TypeAnimation from "react-type-animation";
 import { ReactComponent as Sort } from "../sort.svg";
 import Typed from "react-typed";
+import Fade from 'react-reveal/Fade';
 
 import Background from "./sf2.jpg";
 
@@ -71,18 +72,19 @@ function Main() {
       </div>
       <div className="title-container">
         <div className="title">
-          <Typed
-            strings={["San Francisco '22.", "Shane and Josh."]}
-            typeSpeed={75}
-            backSpeed={60}
-          />
+          <Fade left delay={500}>
+            <p>{listOfImages.length} pictures taken.</p>
+        </Fade>
+        <Fade left delay={1000} duration={1000}>
+            <div>San Francisco '22.</div>
+        </Fade>
         </div>
       </div>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 3 }}>
         <Masonry gutter={10}>
           {images.map((image, index) => (
             <>
-              <Image key={index} src={image} meta={`${index + 1}/${listOfImages.length}`} />
+              <Image key={index} src={image} meta={`${index + 1}`} />
             </>
           ))}
         </Masonry>
