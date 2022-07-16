@@ -11,7 +11,6 @@ import Background from "./sf2.jpg";
 
 function Main() {
   const [images, setImages] = useState([]);
-  const [showTitle, setShowTitle] = useState(false);
   const importAll = (r) => {
     return r.keys().map(r);
   };
@@ -50,13 +49,9 @@ function Main() {
           height="100%"
           width="100%"
           src={Background}
-          onLoad={() => {
-            setShowTitle(true);
-          }}
         ></img>
       </div>
       <div className="title-container">
-        {showTitle && (
           <div className="title">
             <Fade left delay={500}>
               <p>{listOfImages.length} moments captured.</p>
@@ -68,7 +63,6 @@ function Main() {
               <div>San Francisco '22.</div>
             </Fade>
           </div>
-        )}
       </div>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 3 }}>
         <Masonry gutter={10}>
